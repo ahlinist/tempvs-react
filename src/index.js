@@ -4,10 +4,23 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import {IntlProvider} from "react-intl";
+import locale_en from "./translations/en.json";
+import locale_be from "./translations/be.json";
+
+const data = {
+  'be': locale_be,
+  'en': locale_en
+};
+
+const language = navigator.language.split(/[-_]/)[0];  // language without region code
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <IntlProvider locale={language} messages={data[language]}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </IntlProvider>,
   document.getElementById('root')
 );
 

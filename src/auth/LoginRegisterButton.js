@@ -7,6 +7,8 @@ import Modal from 'react-bootstrap/Modal';
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 
+import { FormattedMessage } from "react-intl";
+
 import LoginForm from './LoginForm';
 import RegistrationForm from './RegistrationForm';
 
@@ -39,10 +41,10 @@ class LoginRegisterButton extends Component {
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Body>
             <Tabs className="row">
-              <Tab eventKey="login" title="Log In" className="col-sm-6">
+              <Tab eventKey="login" title={<FormattedMessage id="login" defaultMessage="Log in"/>}>
                 <LoginForm />
               </Tab>
-              <Tab eventKey="register" title="Register">
+              <Tab eventKey="register" title={<FormattedMessage id="register" defaultMessage="Register"/>}>
                 <RegistrationForm />
               </Tab>
             </Tabs>
