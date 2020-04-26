@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
+
 import { FaSignInAlt } from 'react-icons/fa';
+
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Tabs from 'react-bootstrap/Tabs'
+import Tab from 'react-bootstrap/Tab'
+
+import LoginForm from './LoginForm';
+import RegistrationForm from './RegistrationForm';
 
 class LoginRegisterButton extends Component {
   constructor() {
@@ -30,7 +37,16 @@ class LoginRegisterButton extends Component {
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Body>Login/Register forms to be placed here</Modal.Body>
+          <Modal.Body>
+            <Tabs className="row">
+              <Tab eventKey="login" title="Log In" className="col-sm-6">
+                <LoginForm />
+              </Tab>
+              <Tab eventKey="register" title="Register">
+                <RegistrationForm />
+              </Tab>
+            </Tabs>
+          </Modal.Body>
         </Modal>
       </>
     );
