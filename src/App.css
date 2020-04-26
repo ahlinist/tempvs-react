@@ -1,0 +1,11 @@
+* {
+    border-radius: 0 !important;
+}
+
+.App {
+  text-align: center;
+}
+
+.btn {
+    background-color: beige;
+}
