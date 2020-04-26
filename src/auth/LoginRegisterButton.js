@@ -3,7 +3,7 @@ import { FaSignInAlt } from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-class AuthButton extends Component {
+class LoginRegisterButton extends Component {
   constructor() {
     super();
     this.state = {
@@ -37,4 +37,4 @@ class AuthButton extends Component {
   }
 }
 
-export default AuthButton;
+export default LoginRegisterButton;
