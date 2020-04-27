@@ -13,7 +13,7 @@ class LibraryPage extends Component {
 
     return (
       <>
-        <h1><FormattedMessage id="historical.periods" defaultMessage="Historical periods"/></h1>
+        <h1><FormattedMessage id="periods.title" defaultMessage="Historical periods"/></h1>
         {periods.map(
           period => (
             <Link to={"/" + period} key={period}>
