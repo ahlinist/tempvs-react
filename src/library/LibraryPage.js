@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
 
+import { FormattedMessage } from "react-intl";
+
+import { Link } from "@reach/router";
+
+import PeriodTile from './PeriodTile';
+
 class LibraryPage extends Component {
   render() {
+    const periods = ["ancient", "antiquity", "early_middle_ages", "high_middle_ages", "renaissance",
+        "modern", "wwi", "wwii", "contemporary", "other"];
+
     return (
-      <div>
-        Library !
-      </div>
+      <>
+        <h1><FormattedMessage id="historical.periods" defaultMessage="Historical periods"/></h1>
+        {periods.map(
+          period => (
+            <Link to={"/" + period} key={period}>
+              <PeriodTile period={period}/>
+            </Link>
+          )
+        )}
+      </>
     );
   }
 }

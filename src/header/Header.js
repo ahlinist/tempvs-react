@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
-import HeaderLoggedIn from './HeaderLoggedIn';
-import HeaderLoggedOut from './HeaderLoggedOut';
+import React, { Component } from "react";
+
+import HeaderLoggedIn from "./HeaderLoggedIn";
+import HeaderLoggedOut from "./HeaderLoggedOut";
+
+import "./Header.css";
 
 class Header extends Component {
   constructor() {
@@ -10,9 +13,9 @@ class Header extends Component {
 
   render() {
     return (
-      <>
+      <div className="Header">
         {this.state.loggedIn ? <HeaderLoggedIn /> : <HeaderLoggedOut />}
-      </>
+      </div>
     );
   }
 }

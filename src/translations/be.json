@@ -4,5 +4,18 @@
   "email.label": "Пошта",
   "password.label": "Пароль",
   "login.button": "Увайсьці",
-  "request.registration.button": "Запыт на рэгістрацыю"
+  "request.registration.button": "Запыт на рэгістрацыю",
+  "periods.title": "Гістарычныя пэрыяды",
+  "period.ancient.heading": "Старажытнасьць",
+  "period.antiquity.heading": "Антычнасьць",
+  "period.early_middle_ages.heading": "Раньняе Сярэднявечча",
+  "period.high_middle_ages.heading": "Высокае Сярэднявечча",
+  "period.late_middle_ages.heading": "Позьняе Сярэднявечча",
+  "period.renaissance.heading": "Рэнесанс",
+  "period.modern.heading": "Эпоха Мадэрну",
+  "period.wwi.heading": "Першая Сусьветная Вайна",
+  "period.wwii.heading": "Другая Сусьветная Вайна",
+  "period.contemporary.heading": "Сучаснасьць",
+  "period.other.heading": "Іншае",
+  period shortnames translations!
 }
