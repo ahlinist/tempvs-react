@@ -1,4 +1,8 @@
 {
-  "login": "Log in",
-  "register": "Register"
+  "login.tab": "Log in",
+  "register.tab": "Register",
+  "email.label": "Email",
+  "password.label": "Password",
+  "login.button": "Log in",
+  "request.registration.button": "Request registration"
 }

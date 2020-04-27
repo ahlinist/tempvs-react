@@ -41,10 +41,10 @@ class LoginRegisterButton extends Component {
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Body>
             <Tabs className="row">
-              <Tab eventKey="login" title={<FormattedMessage id="login" defaultMessage="Log in"/>}>
+              <Tab eventKey="login" title={<FormattedMessage id="login.tab" defaultMessage="Log in"/>}>
                 <LoginForm />
               </Tab>
-              <Tab eventKey="register" title={<FormattedMessage id="register" defaultMessage="Register"/>}>
+              <Tab eventKey="register" title={<FormattedMessage id="register.tab" defaultMessage="Register"/>}>
                 <RegistrationForm />
               </Tab>
             </Tabs>

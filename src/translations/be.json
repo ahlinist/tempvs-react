@@ -1,4 +1,8 @@
 {
-  "login": "Увайсьці",
-  "register": "Зарэгістравацца"
+  "login.tab": "Увайсьці",
+  "register.tab": "Зарэгістравацца",
+  "email.label": "Пошта",
+  "password.label": "Пароль",
+  "login.button": "Увайсьці",
+  "request.registration.button": "Запыт на рэгістрацыю"
 }
