@@ -10,7 +10,7 @@ import { doFetch } from "../util/Fetcher.js";
 class RegistrationForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
-    doFetch("/user/register", "POST", event);
+    doFetch("/api/user/register", "POST", event);
   }
 
   render() {
