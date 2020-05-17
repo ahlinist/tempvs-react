@@ -4,6 +4,10 @@ export const doFetch = (url, method, event, actions) => {
 
   const defaultAction = () => alert("Something went wrong!"); //TODO: add i18n
 
+  if (!actions) {
+    actions = {};
+  }
+
   const responseHandler = (response) => {
     const status = response.status;
     const handler = actions[status] || actions.default || defaultAction;
