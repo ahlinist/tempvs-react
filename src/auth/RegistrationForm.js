@@ -7,14 +7,17 @@ import { FormattedMessage } from "react-intl";
 
 import { doFetch } from "../util/Fetcher.js";
 
+const initialState = {messageShown: false, messageText: ''};
+
 class RegistrationForm extends Component {
   constructor() {
     super();
-    this.state = {messageShown: false, messageText: ''};
+    this.state = initialState;
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
+    this.setState(initialState);
 
     const actions = {
       409: () => this.showMessage("user.alreadyRegistered.message")
