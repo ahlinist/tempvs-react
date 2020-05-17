@@ -9,8 +9,7 @@ export const doFetch = (url, method, event, actions) => {
   }
 
   const responseHandler = (response) => {
-    const status = response.status;
-    const handler = actions[status] || actions.default || defaultAction;
+    const handler = actions[response.status] || actions.default || defaultAction;
     handler();
   };
 
