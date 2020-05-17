@@ -5,6 +5,7 @@
   "password.label": "Пароль",
   "login.button": "Увайсьці",
   "request.registration.button": "Запыт на рэгістрацыю",
+  "user.alreadyRegistered.message": "Карыстальнік з такой поштай ужо зарэгістраваны",
   "periods.title": "Гістарычныя пэрыяды",
   "period.ancient.heading": "Старажытнасьць",
   "period.antiquity.heading": "Антычнасьць",
