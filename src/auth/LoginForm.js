@@ -7,10 +7,27 @@ import { FormattedMessage } from "react-intl";
 
 import { doFetch } from "../util/Fetcher.js";
 
+const initialState = {messageShown: false, messageText: ''};
+
 class LoginForm extends Component {
+  constructor() {
+    super();
+    this.state = initialState;
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
-    doFetch("/api/user/login", "POST", event);
+    this.setState(initialState);
+
+    const actions = {
+      401: () => this.showMessage("login.failed")
+    };
+
+    doFetch("/api/user/login", "POST", event, actions);
+  };
+
+  showMessage = (text) => {
+    this.setState({messageShown: true, messageText: text});
   };
 
   render() {
@@ -24,6 +41,11 @@ class LoginForm extends Component {
           <Form.Label className="col-sm-4"><FormattedMessage id="password.label" defaultMessage="Password"/> *</Form.Label>
           <Form.Control className="col-sm-8" name="password" type="password" required/>
         </Form.Group>
+        {this.state.messageShown &&
+          <div>
+            <FormattedMessage id={this.state.messageText} defaultMessage="Wrong login or password"/>
+          </div>
+        }
         <Button variant="secondary" type="submit">
           <FormattedMessage id="login.button" defaultMessage="Log in"/>
         </Button>

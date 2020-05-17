@@ -38,7 +38,9 @@ class RegistrationForm extends Component {
           <Form.Control className="col-sm-8" name="email" type="email" required/>
         </Form.Group>
         {this.state.messageShown &&
-          <FormattedMessage id={this.state.messageText} defaultMessage="User with this email has already been registered"/>
+          <div>
+            <FormattedMessage id={this.state.messageText} defaultMessage="User with this email has already been registered"/>
+          </div>
         }
         <Button variant="secondary" type="submit">
           <FormattedMessage id="request.registration.button" defaultMessage="Request registration"/>
