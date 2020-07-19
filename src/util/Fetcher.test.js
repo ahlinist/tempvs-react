@@ -1,6 +1,3 @@
-import React from "react";
-import { render } from '@testing-library/react';
-
 import { doFetch } from './Fetcher';
 
 test('renders learn react link', async () => {
@@ -14,6 +11,6 @@ test('renders learn react link', async () => {
 
   jest.spyOn(global, "fetch").mockImplementation(() => Promise.resolve({status: 200}));
 
-  const result = doFetch("/api/user/login", "POST", event, actions);
+  doFetch("/api/user/login", "POST", event, actions);
   expect(global.fetch).toHaveBeenCalledTimes(1);
 });
