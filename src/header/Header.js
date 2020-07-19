@@ -27,7 +27,11 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
-        {this.state.loggedIn ? this.loggedInMarkup() : this.loggedOutMarkup()}
+        <Container>
+          <Row className="show-grid">
+            {this.state.loggedIn ? this.loggedInMarkup() : this.loggedOutMarkup()}
+          </Row>
+        </Container>
       </div>
     );
   }
@@ -42,28 +46,39 @@ class Header extends Component {
 
   loggedInMarkup() {
     return (
-        <LogOutButton logOut={this.logOut}/>
+      <>
+        <Col sm={3}>
+        </Col>
+        <Col sm={6}>
+          <Link to="/library">
+            <LibraryButton />
+          </Link>
+        </Col>
+        <Col sm={2}>
+        </Col>
+        <Col sm={1}>
+          <LogOutButton logOut={this.logOut}/>
+        </Col>
+      </>
     );
   }
 
   loggedOutMarkup() {
     return (
-      <Container>
-        <Row className="show-grid">
-          <Col sm={3}>
-          </Col>
-          <Col sm={6}>
-            <Link to="/library">
-              <LibraryButton />
-            </Link>
-          </Col>
-          <Col sm={2}>
-          </Col>
-          <Col sm={1}>
-            <LoginRegisterButton logIn={this.logIn}/>
-          </Col>
-        </Row>
-      </Container>
+      <>
+        <Col sm={3}>
+        </Col>
+        <Col sm={6}>
+          <Link to="/library">
+            <LibraryButton />
+          </Link>
+        </Col>
+        <Col sm={2}>
+        </Col>
+        <Col sm={1}>
+          <LoginRegisterButton logIn={this.logIn}/>
+        </Col>
+      </>
     );
   }
 }
