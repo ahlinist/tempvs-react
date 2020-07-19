@@ -20,7 +20,8 @@ class LoginForm extends Component {
     this.setState(initialState);
 
     const actions = {
-      401: () => this.showMessage("login.failed")
+      401: () => this.showMessage("login.failed"),
+      200: () => this.props.logIn()
     };
 
     doFetch("/api/user/login", "POST", event, actions);

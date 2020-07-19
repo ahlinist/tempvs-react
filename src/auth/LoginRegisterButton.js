@@ -21,6 +21,7 @@ class LoginRegisterButton extends Component {
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.logIn = this.logIn.bind(this);
   }
 
   handleShow() {
@@ -29,6 +30,11 @@ class LoginRegisterButton extends Component {
 
   handleClose() {
     this.setState({show: false});
+  }
+
+  logIn() {
+    this.props.logIn();
+    this.handleClose();
   }
 
   render() {
@@ -42,7 +48,7 @@ class LoginRegisterButton extends Component {
           <Modal.Body>
             <Tabs className="row">
               <Tab eventKey="login" title={<FormattedMessage id="login.tab" defaultMessage="Log in"/>}>
-                <LoginForm />
+                <LoginForm logIn={this.logIn} />
               </Tab>
               <Tab eventKey="register" title={<FormattedMessage id="register.tab" defaultMessage="Register"/>}>
                 <RegistrationForm />
