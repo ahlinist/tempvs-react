@@ -1,7 +1,4 @@
 export const doFetch = (url, method, event, actions) => {
-  const data = new FormData(event.target);
-  const payload = Object.fromEntries(data);
-
   const defaultAction = () => alert("Something went wrong!"); //TODO: add i18n
 
   if (!actions) {
@@ -18,6 +15,16 @@ export const doFetch = (url, method, event, actions) => {
     headers:{
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(payload),
+    body: buildPayload(event),
   }).then(responseHandler);
+};
+
+const buildPayload = (event) => {
+  if (event) {
+    const data = new FormData(event.target);
+    const payload = Object.fromEntries(data);
+    return JSON.stringify(payload);
+  } else {
+    return null;
+  }
 };

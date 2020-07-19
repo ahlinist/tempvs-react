@@ -1,10 +1,13 @@
-{
+{  
+  "yes": "Так",
+  "no": "Не",
   "login.tab": "Увайсьці",
   "register.tab": "Зарэгістравацца",
   "email.label": "Пошта",
   "password.label": "Пароль",
   "login.button": "Увайсьці",
   "login.failed": "Ня слушная пошта ці пароль",
+  "logout.confirmation": "Ці ўпэўнены вы, што хочаце выйсьці?",
   "request.registration.button": "Запыт на рэгістрацыю",
   "user.alreadyRegistered.message": "Карыстальнік з такой поштай ужо зарэгістраваны",
   "periods.title": "Гістарычныя пэрыяды",

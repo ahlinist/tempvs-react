@@ -1,10 +1,13 @@
 {
+  "yes": "Yes",
+  "no": "No",
   "login.tab": "Log in",
   "register.tab": "Register",
   "email.label": "Email",
   "password.label": "Password",
   "login.button": "Log in",
   "login.failed": "Wrong login or password",
+  "logout.confirmation": "Are you sure you want to log out?",
   "request.registration.button": "Request registration",
   "user.alreadyRegistered.message": "User with this email has already been registered",
   "periods.title": "Historical periods",

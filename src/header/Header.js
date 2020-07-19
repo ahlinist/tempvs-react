@@ -10,6 +10,7 @@ import Cookies from 'js-cookie';
 
 import LibraryButton from '../library/LibraryButton';
 import LoginRegisterButton from '../auth/LoginRegisterButton';
+import LogOutButton from '../auth/LogOutButton';
 
 import "./Header.css";
 
@@ -20,6 +21,7 @@ class Header extends Component {
       loggedIn: Cookies.get('TEMPVS_LOGGED_IN')
     };
     this.logIn = this.logIn.bind(this);
+    this.logOut = this.logOut.bind(this);
   }
 
   render() {
@@ -34,9 +36,13 @@ class Header extends Component {
     this.setState({loggedIn: true});
   }
 
+  logOut() {
+    this.setState({loggedIn: false})
+  }
+
   loggedInMarkup() {
     return (
-        <LoginRegisterButton logIn={this.logIn}/>
+        <LogOutButton logOut={this.logOut}/>
     );
   }
 

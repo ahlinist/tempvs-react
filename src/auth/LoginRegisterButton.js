@@ -33,8 +33,8 @@ class LoginRegisterButton extends Component {
   }
 
   logIn() {
-    this.props.logIn();
     this.handleClose();
+    this.props.logIn();
   }
 
   render() {
