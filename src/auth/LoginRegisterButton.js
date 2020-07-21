@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
-
 import { FaSignInAlt } from 'react-icons/fa';
-
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Tabs from 'react-bootstrap/Tabs'
-import Tab from 'react-bootstrap/Tab'
-
+import { Button, Modal, Tab, Tabs, OverlayTrigger }  from 'react-bootstrap';
 import { FormattedMessage } from "react-intl";
-
 import LoginForm from './LoginForm';
 import RegistrationForm from './RegistrationForm';
+import HoverPopover from '../component/HoverPopover';
 
 class LoginRegisterButton extends Component {
   constructor() {
@@ -38,11 +32,15 @@ class LoginRegisterButton extends Component {
   }
 
   render() {
+    const popover = (<HoverPopover text="login.popover" default="Log in" />);
+
     return (
       <>
-        <Button className="float-sm-right" variant="default" onClick={this.handleShow}>
-          <FaSignInAlt/>
-        </Button>
+        <OverlayTrigger trigger="hover" placement="bottom" overlay={popover}> 
+          <Button className="float-sm-right" variant="default" onClick={this.handleShow}>
+            <FaSignInAlt/>
+          </Button>
+        </OverlayTrigger>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Body>

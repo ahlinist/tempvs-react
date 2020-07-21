@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-
 import { FaSignOutAlt } from 'react-icons/fa';
-
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-
+import { Button, Modal, OverlayTrigger } from 'react-bootstrap';
 import { FormattedMessage } from "react-intl";
-
 import { doFetch } from "../util/Fetcher.js";
+import HoverPopover from '../component/HoverPopover';
 
 class LogOutButton extends Component {
   constructor() {
@@ -41,11 +37,14 @@ class LogOutButton extends Component {
   }
 
   render() {
+    const popover = (<HoverPopover text="logout.popover" default="Log out" />);
     return (
       <>
-        <Button className="float-sm-right" variant="default" onClick={this.handleShow}>
-          <FaSignOutAlt/>
-        </Button>
+        <OverlayTrigger trigger="hover" placement="bottom" overlay={popover}> 
+          <Button className="float-sm-right" variant="default" onClick={this.handleShow}>
+            <FaSignOutAlt/>
+          </Button>
+        </OverlayTrigger>
 
         <Modal show={this.state.showModal} onHide={this.handleClose}>
           <Modal.Body>

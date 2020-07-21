@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-
 import { FaBook } from 'react-icons/fa';
-
-import Button from 'react-bootstrap/Button';
+import { Button, OverlayTrigger } from 'react-bootstrap';
+import HoverPopover from '../component/HoverPopover';
 
 class LibraryButton extends Component {
   render() {
+    const popover = (
+      <HoverPopover text="library.popover" default="Library" />
+    );
     return (
-      <Button className="float-sm-right" variant="default">
-        <FaBook/>
-      </Button>
+      <OverlayTrigger trigger="hover" placement="bottom" overlay={popover}> 
+        <Button className="float-sm-right" variant="default">
+          <FaBook/>
+        </Button>
+      </OverlayTrigger>
     );
   }
 }
