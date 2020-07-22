@@ -8,6 +8,7 @@ import { Link } from '@reach/router';
 
 import Cookies from 'js-cookie';
 
+import ProfileButton from '../profile/ProfileButton';
 import LibraryButton from '../library/LibraryButton';
 import LoginRegisterButton from '../auth/LoginRegisterButton';
 import LogOutButton from '../auth/LogOutButton';
@@ -24,18 +25,6 @@ class Header extends Component {
     this.logOut = this.logOut.bind(this);
   }
 
-  render() {
-    return (
-      <div className="Header">
-        <Container>
-          <Row className="show-grid">
-            {this.state.loggedIn ? this.loggedInMarkup() : this.loggedOutMarkup()}
-          </Row>
-        </Container>
-      </div>
-    );
-  }
-
   logIn() {
     this.setState({loggedIn: true});
   }
@@ -44,41 +33,31 @@ class Header extends Component {
     this.setState({loggedIn: false})
   }
 
-  loggedInMarkup() {
+  render() {
     return (
-      <>
-        <Col sm={3}>
-        </Col>
-        <Col sm={6}>
-          <Link to="/library">
-            <LibraryButton />
-          </Link>
-        </Col>
-        <Col sm={2}>
-        </Col>
-        <Col sm={1}>
-          <LogOutButton logOut={this.logOut}/>
-        </Col>
-      </>
-    );
-  }
-
-  loggedOutMarkup() {
-    return (
-      <>
-        <Col sm={3}>
-        </Col>
-        <Col sm={6}>
-          <Link to="/library">
-            <LibraryButton />
-          </Link>
-        </Col>
-        <Col sm={2}>
-        </Col>
-        <Col sm={1}>
-          <LoginRegisterButton logIn={this.logIn}/>
-        </Col>
-      </>
+      <div className="Header">
+        <Container>
+          <Row className="show-grid">
+            <Col sm={3}>
+              {this.state.loggedIn &&
+                <Link to="/profile">
+                  <ProfileButton />
+                </Link>
+              }
+            </Col>
+            <Col sm={6}>
+              <Link to="/library">
+                <LibraryButton />
+              </Link>
+            </Col>
+            <Col sm={2}>
+            </Col>
+            <Col sm={1}>
+              {this.state.loggedIn ? <LogOutButton logOut={this.logOut}/> : <LoginRegisterButton logIn={this.logIn}/>}
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   }
 }

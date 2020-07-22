@@ -5,6 +5,7 @@ import { Router } from '@reach/router';
 
 import './App.css';
 import Header from './header/Header';
+import ProfilePage from './profile/ProfilePage';
 import LibraryPage from './library/LibraryPage';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Header />
       <Router>
         <LibraryPage path="/library" />
+        <ProfilePage path="/profile" />
       </Router>
     </div>
   );
