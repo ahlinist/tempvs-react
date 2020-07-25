@@ -15,6 +15,7 @@ function App() {
       <Router>
         <LibraryPage path="/library" />
         <ProfilePage path="/profile" />
+        <ProfilePage path="/profile/:id" />
       </Router>
     </div>
   );

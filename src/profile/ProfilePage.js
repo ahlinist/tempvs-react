@@ -12,7 +12,7 @@ class ProfilePage extends Component {
   }
 
   componentDidMount() {
-    this.fetchProfile();
+    this.fetchProfile(this.props.id);
   }
 
   fetchAvatar(profileId) {
@@ -24,12 +24,13 @@ class ProfilePage extends Component {
     doFetch(url, "GET", null, actions);
   }
 
-  fetchProfile(profileId) {
+  fetchProfile(id) {
+    const url = `/api/profile/profile/${id || ''}`;
     const actions = {
       200: profile => this.renderProfile(profile)
     };
 
-    doFetch("/api/profile/profile", "GET", null, actions);
+    doFetch(url, "GET", null, actions);
   }
 
   renderProfile(profile) {
@@ -37,6 +38,7 @@ class ProfilePage extends Component {
       firstName: profile.firstName,
       lastName: profile.lastName
     });
+    window.history.pushState(null, null, `/profile/${profile.id}`);
     this.fetchAvatar(profile.id)
   }
 
