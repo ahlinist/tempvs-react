@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
 
 import { doFetch } from "../util/Fetcher.js";
+import ModalImage from "../component/ModalImage";
 
 class ProfilePage extends Component {
   constructor() {
@@ -51,7 +52,7 @@ class ProfilePage extends Component {
       <Container>
         <Row>
           <Col sm={4}>
-            <img alt={this.state.avatarInfo} src={`data:image/jpeg;base64, ${this.state.avatarImage}`} />
+            <ModalImage src={this.state.avatarImage} alt={this.state.avatarInfo} />
           </Col>
           <Col sm={4}>
             First name: {this.state.firstName} <br/>
