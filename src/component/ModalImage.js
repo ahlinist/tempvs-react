@@ -22,7 +22,7 @@ class ModalImage extends Component {
   render() {
     return (
       <>
-        <div style={{width: '30vw'}}>
+        <div style={{width: '30vw', border: '4px #eee groove'}}>
           <Image alt={this.props.alt} src={`data:image/jpeg;base64, ${this.props.src}`} onClick={this.handleShow} />
         </div>
 

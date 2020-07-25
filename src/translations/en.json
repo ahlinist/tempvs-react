@@ -1,6 +1,7 @@
 {
   "yes": "Yes",
   "no": "No",
+  "loading": "Loading",
   "login.tab": "Log in",
   "register.tab": "Register",
   "email.label": "Email",

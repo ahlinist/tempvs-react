@@ -13,9 +13,10 @@ function App() {
     <div className="App">
       <Header />
       <Router>
-        <LibraryPage path="/library" />
+        <ProfilePage path="/" />
         <ProfilePage path="/profile" />
         <ProfilePage path="/profile/:id" />
+        <LibraryPage path="/library" />
       </Router>
     </div>
   );

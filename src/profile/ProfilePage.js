@@ -4,11 +4,12 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 import { doFetch } from "../util/Fetcher.js";
 import ModalImage from "../component/ModalImage";
+import Spinner from "../component/Spinner";
 
 class ProfilePage extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {avatarVisible: false};
   }
 
   componentDidMount() {
@@ -44,6 +45,7 @@ class ProfilePage extends Component {
 
   renderAvatar(avatar) {
     this.setState({
+      avatarVisible: true,
       avatarImage: avatar.content,
       avatarInfo: avatar.imageInfo
     });
@@ -54,7 +56,7 @@ class ProfilePage extends Component {
       <Container>
         <Row>
           <Col sm={4}>
-            <ModalImage src={this.state.avatarImage} alt={this.state.avatarInfo} />
+            {this.state.avatarVisible ? <ModalImage src={this.state.avatarImage} alt={this.state.avatarInfo} /> : <Spinner />}
           </Col>
           <Col sm={4}>
             First name: {this.state.firstName} <br/>
