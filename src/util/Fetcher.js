@@ -5,9 +5,9 @@ export const doFetch = (url, method, event, actions) => {
     actions = {};
   }
 
-  const responseHandler = (response) => {
+  const responseHandler = response => {
     const handler = actions[response.status] || actions.default || defaultAction;
-    handler();
+    response.json().then(data => handler(data));
   };
 
   fetch(url, {

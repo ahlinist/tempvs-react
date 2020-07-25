@@ -24,3 +24,7 @@ h1, h2, h3 {
 .form-group {
   padding: 15px;
 }
+
+.row {
+  margin: 0;
+}
